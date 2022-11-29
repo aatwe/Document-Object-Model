@@ -1,0 +1,103 @@
+1)  Flash button when clicked/keypressed
+
+
+->
+shouldwork for both
+1) 
+document.querySelectorAll(".drum")[i].addEventListener("click", function(){
+
+//fetch what button was pressed
+//Detecting Button Press
+
+var buttonInnerHTML = this.innerHTML;	//if button pressed check innerhtml
+					//send it to makeSound() to make relevant sound
+					
+makeSound(buttonInnerHTML);	//pass in that key
+				//In JS can pass functions as parameters and functions as callbacks(include things we get back after event has happened)
+
+buttonAnimation(buttonInnerHTML);	//What pass in ? key of button that is triggered
+
+2) //Afterwards call it inside event listener for keypress
+//Detecting Keyboard Press
+
+And event listener for drum buttons
+				//If keypress detected send event.key property
+document.addEventListener("keypress", function(event)) {	/?Entire webpage starts listening for  keyboard strokes
+		console.log(event);	//
+		call makeSound(event.key)	//use event.key 
+		buttonAnimation(event.key);  
+} 
+
+function buttonAnimation(currentKey){  //from event.key and buttonInnerHTML we get the key
+	//Use the key to generate animation
+}
+//in index.html we have 7 buttons all with class "a dum" , "w drum"   etc.
+	//Use these to query documentfor selector
+
+//Using Query Selector
+document.querySelector(".w");	//remember dot
+	Output: <button class= "w drum">w </button>
+document.querySelector(".k");
+	Output:<button class= "w drum">w </button>
+
+3) How to Query our document?Using Query selector as above
+function buttonAnimation(currentKey){  //from event.key and buttonInnerHTML we get the key
+	//Use the key to generate animation
+	var activeButton = document.querySelector("." +currentKey)		//What is current Key? single character
+							//We will concat with dot
+							we have found the button that has the current key
+							//Now we will change the style of button
+}
+4) in  style.css we have a class 
+.pressed{	//Applies shadow and transperency to elment that adds this class
+  box-shadow: 0 3px 4px 0 #DBEDF3;	//applies shadow
+opacity: 0.5;			//makes transperent
+}
+
+function buttonAnimation(currentKey) {
+	var activeButton = document.querySelector("." + currentKey);	//how to add a class to an element using JS
+	}
+
+How to add pressed class to any element?
+Console: 
+document.querySelector("h1").classList;	//How to find which classes are applied to an element? list of classes that are applied to it : .classList()
+
+document.querySelector("h1").classList.add("pressed");		
+	//this gets applied to h1 
+
+
+how to add pressed class to this particular button?
+
+function buttonAnimation(currentKey) {
+	var activeButton = document.querySelector("." + currentKey);	//how to add a class to an element using JS
+	activeButton.classList.add("pressed");
+	}
+_________________________________________________________________________________________________________________________________________
+=====================================================================================
+TESTING
+
+Try clicking on any button transperency and shadow gets applied to the button
+
+
+Bug: How to remove this effect after hovering done?
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+by setting a timeout
+setTimeout(function, milliseconds, param1,param2..)
+//Note this will work for both key press and click
+
+function buttonAnimation(currentKey) {
+	var activeButton = document.querySelector("." + currentKey);	//how to add a class to an element using JS
+	activeButton.classList.add("pressed");
+
+	setTimeout(function() {
+	  activeButton.classList.remove("pressed");
+},100);	
+	//How to set timeout in JS?
+	
+__________________________+_________________________________________________
+
+TEST
+button will get blackened when hover after delay of 3 seconds back to original 
+
+

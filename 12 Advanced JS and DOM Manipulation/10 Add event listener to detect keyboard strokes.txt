@@ -1,0 +1,125 @@
+Objective:
+10 Add event listener to detect keyboard strokes					//Main logic: add event listner to entire document
+
+
+
+Use same method addEventListener and add to entire document instead of specific button/element
+Once element was detected, function gets called passing in the event that triggered the key press
+Event contains property  called key which tells which keyboard key was pressed which is passed to makesound()
+
+we clicked earlier
+How to get keyboard event?
+
+
+
+keydown event listener
+
+mdn -> Web -> Events 
+Find list of events
+
+____________________________________
+
+
+1) target the key press event
+//earlier we added event listener to:
+	document.querySelectorAll(".drum)[i].addEventListener("click", function())	//Earlier we added event listener to button
+			when is event listener triggered? when button pressed
+
+					//How to add event listener to keyboard //by adding to entire document
+	document.addEventListener("keypress", function()) {	/?Entire webpage starts listening for  keyboard strokes
+		alert("key was pressed");
+}
+
+Implement:
+on page tap on any key -> get alert -> key was pressed
+
+How Figure out which key was perssed? using event
+once event happens, element triggers the function
+What if we pass parameter into function
+
+
+document.addEventListener("keypress", function(event)) {	/?Entire webpage starts listening for  keyboard strokes
+		console.log(event);		//Can we use any other keyword instead of event? Yes e, evt anything works
+}
+
+Output: 
+//All information related to the keypress
+KeyboardEvent {isTrusted: true, key:"l", code:"KeyL", location: 0, ctrlKey: false, ...}
+
+Check MDN -> keypress events -> lot of properties
+	one is : key //tells which key value got tapped, we need this
+____________________________________________________________________________________________________________________________________
+
+both 1 and 2 make use of makeSound()
+1)
+--------------------------------------------------------------------------------------------------------------------------------------
+//our switch cases are inside button listener for button clicks
+//Create a function that takes a character and checks against switch statement to play correct sound
+//Call it inside event listener for key press
+//And event listener for drum buttons
+
+document.querySelectorAll(".drum")[i].addEventListener("click", function(){
+
+//fetch what button was pressed
+//Detecting Button Press
+
+var buttonInnerHTML = this.innerHTML;	//if button pressed check innerhtml
+					//send it to makeSound() to make relevant sound
+					
+makeSound(buttonInnerHTML);	//pass in that key
+				//In JS can pass functions as parameters and functions as callbacks(include things we get back after event has happened)
+
+2) 
+-----------------------------------------------------------------------------------------------------------------------------------
+//Afterwards call it inside event listener for keypress
+//Detecting Keyboard Press
+
+And event listener for drum buttons
+				//If keypress detected send event.key property
+document.addEventListener("keypress", function(event)) {	/?Entire webpage starts listening for  keyboard strokes
+		console.log(event);	//
+		call makeSound(event.key)	//use event.key 
+}
+
+//Creating that function
+function makeSound(key) {
+switch(key) {	//instead of switching on buttonInnerHTML , we switch on key
+      case "w":
+ 	var tom1 = new Audio("sounds/tom-1.mp3");
+	tom1.play();    
+        break;
+	
+      case "a":
+	var tom2 = new Audio("sounds/tom-2.mp3");
+	tom2.play()'
+	break;
+      case "s":
+  	var tom2 = new Audio("sounds/tom-3.mp3");
+	tom3.play()'
+	break;
+
+      case "d":
+	var tom3 = new Audio("sounds/tom-4.mp3");
+	tom2.play()'
+	break;
+
+      case "j":
+	var tom4 = new Audio("sounds/snare.mp3");
+	tom2.play()'
+	break;
+
+      case "k":
+	var snare = new Audio("sounds/crash.mp3");
+	tom2.play()'
+	break;
+
+      case "l":
+	var kick = new Audio("sounds/kick-bass.mp3");
+	tom2.play()'
+	break;
+
+      default;
+}
+}
+}
+}

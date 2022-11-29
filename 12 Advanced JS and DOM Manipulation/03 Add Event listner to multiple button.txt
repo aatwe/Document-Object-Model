@@ -1,0 +1,14 @@
+How to add event listener to multiple buttons? Use loop
+
+1) Get buttons using getElementsByClassName
+
+
+Use for loop/while loop
+
+drum = document.getElementsByClassName("wdrum")
+var numberOfDrumButtons = document.querySelectorAll("drum").length;
+for(var i = 0; i<numberofDrumButtons; i++){
+document.querySelector(".drum")[i].addEventListner("click", function(){
+	alert("I got clicked!")
+})
+}

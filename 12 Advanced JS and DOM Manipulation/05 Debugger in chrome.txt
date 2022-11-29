@@ -1,0 +1,58 @@
+Debugger is used to find what is wrong in codes
+function add(num1, num2) {
+    return num1 + num2;
+}
+
+function multiply(num1, num2) {
+    return num1*num2;
+}
+
+function calculator(num1, num2, operator){
+   return  operator(num1, num2)
+}
+
+calculator(4,5,add);
+>9
+calculator(4,5,multiply)
+>20
+
+//Use debugger
+debugger;
+calculator(3,4,multiply);
+++++++++++++++++++++++++++++++++++++++++
+How to Debug in Chrome?
+1) Reproduce the bug
+	for ex 5 + 6 = 56 	//should be 11 //bug reproduced
+
+2) Click sources tab
+	3 panels in sources
+		File navigator, Code editor , JS Debugging
+
+3) Add break points in time in code around approx area you think error is
+	Examine all values at a moment in time
+	breakpoints > console.log
+	dont need to know code structure using breakpoint
+
+
+4) Check event listenr breakpoints, 
+	Dev tools pauses when any clicked event listener execute
+
+
+5) Step through and step over function calls
+
+
+6) Check variable values in scope
+
+++++++++++++++++++++++++++++++++++++++++++
+How to use watch expression
+monitor variable values over time
+	click watch -> add any expression -> monitor value
+
+++++++++++++++++++++++++++++++++++++++++++
+How to evaluate your expressions and test?
+Console -> put expression -> find a fix in expression until correct output
+
+
+
++++++++++++++++++++++++++++++++++++++++++
+Edit code after finding fix

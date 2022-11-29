@@ -1,0 +1,88 @@
+1) Create a audio object using html audio element, pass your mp3
+var audio = new Audio ('audio_file.mp3');
+audio.play();
+
+
+What does it do?
+your audiofile is converted to  html media element
+
+an html media element has lots of properties
+Properties:
+set current time you want to play.
+played
+.muted
+.preload 
+etc
+Mehods:
+.play();
+etc
+______________________________________________________
+
+1) Add event listener to all buttons
+var numberofDrumButtons = document.querySelectorAll(".drum").length;
+for (var i = 0; i< numberOfDrumBUttons; i++) {
+	document.querySelectorAll(".drum")[i].addEventListener("click", function()
+		//grabs all elements with class drum i.e all buttons
+		//loop thorugh all and add event listener to them 
+{
+2) load new audio in variable audio
+var audio = new Audio ('sounds/tom-1.mp3');
+audio.play();
+
+});
+} 
+
+How to assign different button different sounds  /continued later
+
+1) Assign images to button
+styles.css
+
+
+.w {
+  background-image: url("images/tom1.png");
+}
+.a{ background-image: url("images/tom2.png");
+}
+.s{ background-image: url("images/tom3.png");
+}
+.d{ background-image: url("images/tom4.png");
+}
+
+
+2) How to find which button was clicked/ triggered the event? this keyword
+attach listener to button -> will trigger function to console log button identity.
+
+ how to find identity of button that triggered event listener? this button
+
+console.log(this);
+//output
+<button class>a drum> a </button> 
+
+
+2) how to assign sounds to buttons? loop all buttons
+
+
+var numberofDrumButtons = document.querySelectorAll(".drum").length;
+for (var i = 0; i< numberOfDrumBUttons; i++) {
+	
+document.querySelectorAll(".drum")[i].addEventListener("click", function()
+
+}
+var audio = new Audio ('sounds/tom-1.mp3');
+console.log(this.innerHTML);
+audio.play();
+});
+}
+________________________________________________________________________________________
+Can change the color of text
+var numberofDrumButtons = document.querySelectorAll(".drum").length;
+for (var i = 0; i< numberOfDrumBUttons; i++) {
+	
+document.querySelectorAll(".drum")[i].addEventListener("click", function()
+
+{
+var audio = new Audio ('sounds/tom-1.mp3');
+console.log(this.innerHTML);
+audio.play();
+});
+}  

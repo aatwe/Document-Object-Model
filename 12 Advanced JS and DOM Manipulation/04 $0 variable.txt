@@ -1,0 +1,45 @@
+What is $0 variable?
+
+1) Select an element in Elements tab
+
+2) Use below
+$0 = selected element
+$1 = element last selected
+$2 = element before $1 ...
+
+
+How to use?
+Can access DOM elements from console
+We use it to edit a website on fly
+
+1) Open blank page on chrome : Use url: data:text/html,
+2) Console -> Type $0
+	output = <body></body>
+
+	//We accessed m
+
+
+3) In any normal code
+	check any element , against : ==$0 visible
+
+
+
+in chrome Select an element
+inspect
+
+you will see $0 variable against 
+
+
+for ex
+$0.innerHTML = "AngelaScript";
+
+Can also add event listener to $0
+$0.addEventListener("click", function()){
+	console.log("I got clicked")
+}
+
+Can also used a named function
+$0.addEventListener("click", respondToClick() ;
+function	respondToClick() {
+ 	console.log("I got clicked");
+} 

@@ -1,0 +1,61 @@
+we cant create too many variables
+
+for ex a  class bell boy
+everything has same set of properties : name, age, hasWorkPermit, languages
+
+
+we could create excel
+but in Javasctipt :
+
+
+How to structure data in Javascript:
+HOW TO CREATE AN OBJECT?
+
+var bellBoy1= {
+   name: "Timmy;"
+   age: 19;
+   hasWorkPermit: true;
+   langugages: ["French","English"]
+} 
+
+USE the OBJECT properties? dot notatiaon
+alert("Hello my name is "+ bellBoy1.name)
+
+_________________________________________________________
+
+
+JAVA SCRIPT CONSTRUCTOR Functions : used to create new objects
+//first lettter capital
+//takes input and initializes the properties like a factory
+//How to create new object from constructor function?
+ just have to fill properties with new values
+//constructor will create new object with the new property values
+
+
+function BellBoy(name,age, hasWorkPermit, languages) {
+  this.name = name;
+  this.age = age;
+   this.hasWorkPermit = hasWorkPermit;
+   this.languages = languages;
+}
+
+How to initilaize object?
+Dont have to specify name of property
+var bellBoy1 = new BellBoy("Timmy", 19, true. ["French", "English"]);
+
+______________________________________________________________________________
+var Housekeeper1 = {
+   yearsOfExperience = 12,
+   name: "Jane",
+   cleaningRepertoire: ["bathroom", "Lobby", "Bedrrom"]
+}
+ 
+function HouseKeeper (yearsOfExperience, name, cleaningRepertoire) {
+   this. yearsOfExperience = yearsOfExperience;
+   this.name = name;
+   this.cleaningRepertoire =  cleaningRepertoire;
+}
+
+console.log(Housekeeper1.name);
+O/P : Tom 
+

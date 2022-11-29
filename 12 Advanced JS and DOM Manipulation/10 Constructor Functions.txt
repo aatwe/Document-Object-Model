@@ -1,0 +1,80 @@
+We declared the JS object
+var bellBoy1 = {
+   name: "Timmy",
+   age: 19,
+   hasWorkPermit: true,
+   languages: ["French", "English"],
+
+//  Name	    Colon	function() {}
+   moveSuitcase: function() {
+                alert("May I take your suitcase/");
+    	pickUpSuitcase();
+                move();
+   
+   }
+}
+
+Now we try to add this method to constructor function
+How to use this method with constructor function?
+
+
+
+function BellBoy (name,age,hasWorkPermit, languages) {
+   this.name = name;
+   this.age    = age;
+    this.hasWorkPermit = hasWorkPermit;
+    this.languages = languages;
+    this.moveSuitcase = function() {
+  	alert("May I take your suitcase?");
+	pickUpSuitcase();
+	move();
+}
+}
+
+
+what advantage of using this method in constructor function over JS object?
+you create an object using constructor, all will have function moveSuitcase
+______________________________________________________________________________________________________
+
+Ex challenge
+
+Given 
+function Housekeeper (yearsOfExperience, name, cleaningRepertoire) {
+  this.yearsOfExperience = yearsOfExperience;
+  this.name = name;
+   this.cleaningRepertoire = cleaningRepertoire
+}
+Add method to housekeeper constructor function named as clean
+method will just send alert saying cleaning in progress
+Create new housekeeper from the consturctor function and call cleaning method associated with that object
+
+function Housekeeper (yearsOfExperience, name, cleaningRepertoire) {
+  this.yearsOfExperience = yearsOfExperience;
+  this.name = name;
+   this.cleaningRepertoire = cleaningRepertoire
+	alert.("Cleaning in progress...");
+	}
+
+var houseKeeper1 = new Housekeeper(12, "James", {"bedroom"});
+houseKeeper1.clean();
+
+
+
+//note
+this is similar to 
+
+var tom1 = new Audio("sounds/tom-1.mp3");	//call constructor to create new object by giving location
+tom1.play();				//call play method
+break;
+
+imagine what constructor function will look like for this audio JS object
+
+function Audio (fileLocation) {
+  this.fileLocation = fileLocation;
+  this.play=  function(){
+	//tap into audio hardware
+	//check if file exists
+	//check if file is soundfile
+	//play soundfile
+}
+}

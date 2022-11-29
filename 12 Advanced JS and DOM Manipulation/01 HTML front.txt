@@ -1,0 +1,25 @@
+1) Give Heading
+
+2) Create buttons, assign class wdrum to each button
+
+3) link index.js
+
+link html and js
+
+Note:We linking buttons and JS in same class
+all buttons have same class
+
+<body>
+<h1 id="title">Drum Kit </h1>
+<div class="set">
+  <button class="wdrum">w </button>
+  <button class="wdrum">a </button>
+  <button class="wdrum">s </button>
+  <button class="wdrum">d </button>
+  <button class="wdrum">j </button>
+  <button class="wdrum">k </button>
+  <button class="wdrum">l </button>
+<script src="index.js" charset="utf-8"></script>
+</body>
+
+How to register the button clicks? Add event listener

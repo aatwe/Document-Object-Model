@@ -1,0 +1,36 @@
+Objective: Trigger a funtion when a button is clicked
+
+
+
+index.js
+
+//1) Create function that should trigger on click
+
+function handleClick() {
+   alert("I got clicked")
+}
+
+//How to trigger this function when clicked?Add event listener
+Where to find? MDN 
+					//event to listen to, listener
+
+//2) Add event listener to button to register click
+	event to listen to= click  ,  listener = handleClick function
+
+
+document.querySelector("button").addEventListener("click", handleClick)
+	why no () in function call
+		it will directly call function on loading website/event listener is added
+	by passing by name only, we will wait for it to call when event listener is called
+
+//Can also write this way
+document.querySelector("button").addEventListener("click", function() {
+	alert("I got clicked");
+})
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+How many DOM events?
+change
+click
+input
+mouseover etc
+https://www.w3schools.com/jsref/dom_obj_event.asp

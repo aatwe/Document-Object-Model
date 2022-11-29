@@ -1,0 +1,33 @@
+function moveSuitcase {
+   alert("May I take your suitcase/");
+   pickUpSuitcase();
+  move();
+
+}
+
+How to use this method with our JS object
+Give our object this method. An y object we create with constructor will have this method
+
+
+var bellBoy1 = {
+   name: "Timmy",
+   age: 19,
+   hasWorkPermit: true,
+   languages: ["French", "English"],
+
+//  Name	    Colon	function() {}
+   moveSuitcase: function() {
+                alert("May I take your suitcase/");
+    	pickUpSuitcase();
+                move();
+   
+   }
+}
+
+
+//How to call this method ? dot
+Bellboby1.moveSuitcase();
+
+_______________________________________________________________
+
+function Housekeeper (yearsOfExperience)

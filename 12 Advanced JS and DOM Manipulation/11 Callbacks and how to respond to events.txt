@@ -1,0 +1,146 @@
+1) Higher Order Functions in JS
+
+Which is the HOF? addEventListener
+	Why HOF? takes another function as input respondToKey(event)
+		What is input function called? Callback function
+		What does callback function do? gets called back and executed
+	
+document.addEventListener("keypress", respondToKey(event));	//when document detects key press
+							Document calls the function respondToKey(event)
+
+function respondToKey(event) {
+	console.log("key Presse");
+}
+
+__________________________________________
+Test
+inspect "Javsscript" heading on wikipedia page
+right click console -> select h1 -> add ==$0at end
+
+
+Console
+//Call anonymous function
+Who is callign the callback fucntion? obejct experiencing the click
+$0.addEventListener("click", function(event)){	//listen for click event, once detected, get it to call this function with the event that triggered this
+					//How is this event obtained? passed back through callback function
+					//Can we use any other keyword instead of event? Yes e, evt anything works
+	console.log(event);			/Can we use any other keyword instead of event? Yes e, evt anything works
+}); 
+Output:
+MouseEvent
+__________________________________________________________
+Does event listener input name matter
+Use any other keyword instead of event
+
+function sayHi(to) {
+	console.log"Hello, " + to);
+}
+sayHi("Tom");
+Hello, Tom
+
+or
+
+
+function sayHi(name) {
+	console.log"Hello, " + name);
+}
+sayHi("Tom");
+Hello, Tom
+____________________________________________________________
+Create your own AddEventListener()
+
+//Exploring how AddEventlistener works in document.AddEventListener("keypress ", function(event))
+function anotherAddEventLIstener(typeofEvent, callback) {
+	
+	var eventThatHappened = {	//When is this object created? After the event happens, 
+		//What will this event object capture?information about keypress
+		eventType: "keypress",
+		key:"p";
+		durationOfKeypress:2
+		}
+	//how to pass this created object?
+
+	//When is callback called? on particulat type of event, not all
+
+//Check
+	if(eventThatHappened.eventType === typeOfEvent){
+		callback(eventThatHappened);			 
+}
+}
+
+//We call this anotherAddeventListener
+
+anotherAddeventListener(*keypress", function(event){		//keypress will be checked against
+	console.log(event);
+}
+---------------------------------------------------------------------------------------------------------------------
+Output:
+{eventType: "keypress", key:"p", durationOfKeypress:2 }
+---------------------------------------------------------------------------------------------------------------------
+or
+anotherAddeventListener(*keypress", function(event){		//keypress will be checked against
+	console.log(event);
+}
+
+---------------------------------------------------------------------------------------------------------------------
+Output
+---------------------------------------------------------------------------------------------------------------------
+
+
+How similarly addEventlisteneer works
+document.addeventListener(*keypress", function(event){		//keypress will be checked against
+	console.log(event);
+}
+//KeyboardEvent {isTrusted:true, key: "k", code;"KeyK", location: 0, ctrlKey: false, }
+
+_________________________________________________________________________________________________________________________________
+
+
+1) 
+
+debugger;
+anotherAddeventListener(*keypress", function(event){		//Pass what event to detect and the callback	
+	console.log(event);
+});
+
+2) After entering the debug mode step through function calls
+	Click and it takes to where the function was declared
+
+function  anotherAddEventLIstener(typeOfEvent, callback) { typeOfEvent = "keypress", callback = f(event)
+				/Detect Event Code
+	var eventThatHappened = {
+	eventType: "keypress",
+	key: "p",
+	durationOfKeypress: 2
+}
+if (eventThatHappened.eventType === typeOfEvent) {
+	callback(eventthatHappened)
+}
+
+
+IN DEBUGGER WE SEE THE FOLLOWING FLOW:
+We will step through the function calls using step into button
+
+1) anotherAddEventListener is called  with 2 inputs
+	STEP INTO
+2) anotherAddEventListener declaration 
+	wait for key press
+3) when key pressed, capture info about the key press(event type, key, duration)
+	event object created
+	STEP INTO
+4) 
+if (eventThatHappened.eventType === typeOfEvent) {	//Check
+	callback(eventthatHappened)		//trigger calllback function that we gave as input
+}					
+	STEP INTO
+
+5) goes into our function and executes inside
+
+debugger;
+anotherAddeventListener(*keypress", function(event){		//Pass what event to detect and the callback	
+	console.log(event);
+});
+//We will see the event down in log
+eventType: "keypress",
+	key: "p",
+	durationOfKeypress: 2
